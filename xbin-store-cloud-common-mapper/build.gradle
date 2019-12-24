@@ -1,0 +1,26 @@
+plugins {
+    id 'java-library'
+    id 'idea'
+}
+
+description = "xbin-store-cloud-commom-mapper"
+
+dependencies {
+    compile(project(":xbin-store-cloud-common-pojo"))
+    compile("mysql:mysql-connector-java:${mysqlVersion}")
+    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:${springBootMyBatisVersion}")
+    compile("com.github.pagehelper:pagehelper-spring-boot-starter:${springBootpagehelperVersion}")
+    compile("com.alibaba:druid-spring-boot-starter:${springBootDruidVersion}")
+    compile fileTree(dir: 'src', includes: ['/*.xml'])
+}
+
+jar {
+    //指定包名
+    baseName = 'xbin-store-cloud-common-mapper'
+
+    //指定包含的文件
+    from('src/main/java') {
+        include '**/*.xml'
+    }
+
+}

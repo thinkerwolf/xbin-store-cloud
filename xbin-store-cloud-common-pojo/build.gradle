@@ -1,0 +1,11 @@
+plugins {
+    id 'java-library'
+    id 'idea'
+}
+
+description = "xbin-store-cloud-common-pojo"
+
+dependencies {
+    compileOnly("org.projectlombok:lombok:${lombokVersion}")
+}
+
